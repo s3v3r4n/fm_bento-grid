@@ -27,7 +27,7 @@
 html {
     box-sizing: border-box;
     font-family: var(--main-font);
-    font-size: 112.5%; /** 18px **/
+    font-size: 75%;
     margin: 2rem 1rem;
     background-color: rgb(235, 235, 235);
 

@@ -60,6 +60,7 @@ html {
     align-items: center;
     max-width: 30rem;
     width: 100%;
+    line-height: 2.5em;
 
 }
 
@@ -92,6 +93,7 @@ html {
     max-width: 30rem;
     padding: 1em;
     border-radius: 1em;
+    line-height: 1.8em;
 
 }
 
@@ -193,6 +195,45 @@ html {
 
 .type-5 img {
     width: 10rem;
+}
+
+.card-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+
+@media (min-width: 1440px) {
+
+    .grid-layout {
+        display: grid;
+        grid-template-columns: repeat(4, 14rem);
+        grid-template-rows: 20rem 15rem 12rem;
+        grid-template-areas: 
+        "card-column heading-card heading-card card-3"
+        "card-column card-1a      card-2       card-3"
+        "card-column card-1b      card-4       card-4";
+    }
+
+    .grid-card, .heading-card {justify-content: center; }
+
+
+
+    .heading-card {grid-area: heading-card; flex: 1;}
+    .card-column {grid-area: card-column; justify-content: space-between;}
+    .card-column .type-2,.type-5 {flex: 1; ;}
+    .card-column h2 {font-size: 2.2em;}
+    .type-1:nth-of-type(2) { grid-area: card-1a; overflow: hidden;}
+    .type-1:nth-of-type(2) img {width: 18rem; align-self: flex-start;}
+    .type-1:nth-of-type(6) { grid-area: card-1b;}
+    .type-2 { grid-area: card-2; justify-content: space-between;}
+    .type-2:nth-of-type(3) img {width: auto;}
+    .type-3 { grid-area: card-3; overflow: hidden; text-align: left;}
+    .type-3 img {width: 22rem;}
+    .type-3 p {margin: 0;}
+    .type-4 { grid-area: card-4; flex-direction: row; text-align: left; align-items: center;}
+    .type-4 img {width: 10rem;}
 }
 
 
